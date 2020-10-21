@@ -30,6 +30,10 @@ composition-1 {
 
 }
 ```
+- The remote-exec provisioner allow you to connect to VM via WinRM or SSH and run a scrcipt remotely
+- Using user_data (aws) argument or custom_data (azure) to pass data to a VM
+- Using provisioners for Chef, Puppet, salt to bootstrap the VM
+- Running a script locally as part of your terraform configuration using the local-exec provisioner
 ## Concepts
 - Resource: such as: aws_vpc, aws_instance, aws_db_instance
     - Belong to provider such as: aws, gcp, azure, ...
