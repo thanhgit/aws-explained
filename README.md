@@ -7,7 +7,7 @@
 - [Terraform security](https://speakerdeck.com/garethr/shifting-terraform-security-left)
 
 ## Best practise
-- [Best](https://speakerdeck.com/joatmon08/best-practices-of-infrastructure-as-code-with-terraform)
+- [Best Practices of Infrastructure-as-Code with Terraform](https://speakerdeck.com/joatmon08/best-practices-of-infrastructure-as-code-with-terraform)
 
 ## Tools
 - [Create flow chart with markdown](https://github.com/mermaid-js/mermaid)
