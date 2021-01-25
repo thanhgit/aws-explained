@@ -1,5 +1,5 @@
 # Security
-- Why penatration testing is planning:
+- Why penetration testing is planning:
     - The need for a methodology approach
     - How to establish the testing methodology
 

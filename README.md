@@ -65,6 +65,8 @@ https://github.com/PacktPublishing/Mastering-AWS-CloudFormation
 - [Terraform structure](./terraform_structure.md)
 - [Terraform pattern](./terraform_pattern.md)
 - [Terraform example](./terraform_example.md)
+
+## [Penetration testing](./security_penetration.md)
 ## Best practise
 - [Best Practices of Infrastructure-as-Code with Terraform](https://speakerdeck.com/joatmon08/best-practices-of-infrastructure-as-code-with-terraform)
 
