@@ -1,4 +1,54 @@
 # Cloudformation
+- A stack can be thought of as a collection of resources, along with a list of events associated with changes to those resources an the stack itself
+- Note: the additional tags in the aws:cloudformation namespace, it will help keep track of its stack
+## Command line to create cloudformation
+```bash
+aws cloudformation create-stack --template-body file://example-stack.json --stack-name example-stack
+---
+9c9,10
+4a5,10
+<
+"Tags": [
+<
+{
+<
+"Value": "bar",
+<
+"Key": "foo"
+<
+}
+<
+],
+```
+
+## Command line to get change in template of cloudformation
+```bash
+aws cloudformation get-template --stack-name example-stack \
+| grep -v "TemplateBody" | head -n -1 > example-stack.running
+
+diff <(jq '.' example-stack.running) <(jq '.' example-stack.json)
+```
+
+## Command line to track down events in cloudformation
+```bash
+aws cloudformation describe-stack-events --stack-name example-stack --output text
+
+aws cloudformation describe-stack-resources --stack-name example-stack --output text
+
+aws ec2 describe-tags --filters Name=resource-type,Values=instance Name=resource-type,Values=i-xxx --output text
+```
+
+## Command line to update stack
+```bash
+aws cloudformation update-stack --template-body file://example-stack.json --stack-name example-stack --output text
+---
+arn:aws:cloudformation:us-east-1:xxx:stack/example-stack/xxx
+```
+
+## Command line to delete stack
+```bash
+aws cloudformation delete-stack --stack-name example-stack
+```
 
 ## The building blocks of serverless application 
 - Computing - `Lambda` - Computing component, used for your business logic
