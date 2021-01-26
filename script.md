@@ -1,3 +1,22 @@
+## Output table in command line
+```
+aws ec2 describe-instances --output table
+```
+
+## Using --query option in aws command
+```
+aws ec2 run-instances --region us-east-1 \
+--instance-type t2.micro --image-id ami-43a15f3e \
+--output text --query 'Instances[*].InstanceId'
+```
+- Useful in shell script
+```bash
+#! /bin/bash
+KILL_LIST=$(aws ec2 describe-instances --output text \
+--query 'Reservations[*].Instances[*].InstanceId')
+aws ec2 terminate-instances --instance-ids $KILL_LIST
+```
+
 ## Set timeout
 ```yaml
 Globals:

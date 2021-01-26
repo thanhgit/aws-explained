@@ -4,7 +4,7 @@
 ## [IAM](./iam.md)
 
 ## [Overview Security AWS](./security_aws.md)
-## EC2 (Elastic compute cloud)
+## [EC2](./ec2.md) (Elastic compute cloud)
 - [Lifecycle of EC2](https://jayendrapatil.com/tag/disableapitermination/)
 
 ## [ECS](./ecs.md)
