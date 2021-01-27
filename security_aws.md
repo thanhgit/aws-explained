@@ -123,6 +123,16 @@
     - Access control
     - AWS service security features
 
+## Security applications 
+- AWS cognito: for authenticating user data for your mobile and web apps
+    - Providing in-built sign-in screens and authentication functionality
+    - It handles authentication, authorization and sync for user management process across devices for all the users
+    - 3rd party with google, twitter, facebook, ...
+- AWS API gatewate: for securing, creating and managing APIs 
+    - Management of APIs includes access control, traffic, monitoring, API version
+- AWS WAF: is a web application firewall that helps you define multiple rules and access control lists to secure your web apps from common security threats such as: XSS, DDoS, SQL injections, ...
+
+![](./media/aws_waf_webacl.png)
 
 
 
