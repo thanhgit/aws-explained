@@ -35,6 +35,27 @@
     ]
 }
 ```
+```json
+{ 
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": "*",
+            "Resource": "*",
+            "Condition": {
+                "NotIpAddress": {
+                    "aws:SourceIp": ["10.0.0.0/24", "10.10.0.0/24"]
+                }
+            }
+        }
+    ] 
+}
+```
 
 ## The AWS security model rely on a shard responsibility model
 - User owns the OS's login credentials but AWS bootstraps initial access to that same OS
