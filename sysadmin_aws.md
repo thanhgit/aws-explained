@@ -127,3 +127,85 @@ aws iamm put-user-policy --user-name ami-cleaner \
 --policy-name iam-cleaner \
 --policy-document file://./s3-policy.json
 ```
+
+## Create group and user, then adding user to group
+```bash
+aws iam create-group --group-name dev_admins --path "/dev/"
+
+aws iam create-user --user-name vana --path "/dev/"
+
+aws iam add-user-to-group --user-name vana --group-name dev_admins
+```
+
+## List users and groups
+```bash
+aws iam list-users --output text
+
+aws iam list-groups --output text
+```
+
+## Adding policy to group
+`dev_admins.json`
+```json
+{
+    "Statement": {
+        "Effect": "Allow",
+        "Action": "iam:*",
+        "Resource": [
+            "arn:aws:iam::740376006796:group/dev/*",
+            "arn:aws:iam::740376006796:user/dev/*"
+        ]
+    }
+}
+```
+```bash
+aws iam put-group-policy --group-name dev_admins --policy-name dev_admins --policy-document file://./dev_admins.json
+```
+
+## Get credentials report in IAM console
+```bash
+aws iam get-credential-report | jq -r '.Content' | base64 -d > report.csv
+```
+### Get access keys
+- AWS limit users have 2 access keys
+```bash
+aws iam list-access-keys --user-name vana
+```
+
+### Inactive access key
+```bash
+aws iam update-access-key --access-key-id vana-accecss-key-id --state Inactive --user-name vana
+```
+
+### Update password policy
+```bash
+aws iam update-account-password-policy --allow-users-to change-password --max-password-age 90 --minimum-password-length 14
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
