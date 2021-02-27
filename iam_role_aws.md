@@ -93,6 +93,33 @@ aws ec2 run-instances --image-id ami-43a15f3e --region us-east-1 --key dev-key \
 --iam-instance-profile Name="avatar-image"
 ```
 
+### How to request credentials with curl
+```bash
+curl http://169.254.169.254/latest/meta-data/iam/security-credentials/avatar-image
+```
+```json
+{
+    "Code" : "Success",
+    "LastUpdated" : "2016-06-11T03:44:36Z",
+    "Type" : "AWS-HMAC",
+    "AccessKeyId" : "ASIAJ5HOGZLCDMXIMARA",
+    "SecretAccessKey" : "hPaw27itOOxc2Sq2fZxKKgzM9pbctYg5GjnAsUbI",
+    "Token" : "FQoDYXdzECUaDAPhEgucj01B4VLx6SKZA/WqJVcs9JDkV83vL62J9dypgAq-
+    LIMu2zGajKfJg/xCc57yOh+yBgWx85XLzpQoQNc5oof5Kd1mxW4mkIGeW9uktKrVI
+    +oD1FdgEg4ve9U2irMurcYZxlFA9wiZcb2ohrUWDnRMOvIHJEOV3cK1fG0WLVTsetkFAASmOw8jobQ-
+    Viy2eocMnFd3bksriq+oy/khsHpm+7SoAcd2cDfpZmhH+ibIl8+fHWD2iLr5pfvqQ2bYsHKW2o6ROY0H
+    +18vRXcDaBU9qnHSKTWlw7P7Vv0zE3Vde1y7AH0XPwYp7sbfeQJiKFWBUhNCUTIsHaYoXp-
+    JARjJPRLo1Z+gaWipkLc4NSTNgu3m9mSLtS4JjCEJvfLbJ5sF1XxqYJe-
+    peGDspTu4YX4DWvpPQuDkvCDswjgASNDR1cdR+jebYuCPiIIQCiUBZeD
+    +EKtp3SxKa13mX5EcrH5OSkcOoOq8m9nKNa9HfljVox8TNcwYIvFLNUvWRUWABPt0MyN2YXvGpAA/
+    JqFMHzni25+av7noGL2+UJxAgBC8h3BicZyrN4ouZLuugU=",
+    "Expiration" : "2016-06-11T09:55:33Z"
+}
+```
+- Fortunately, the authors of the AWS SDKs have decided to make things easy for use using the client libraries
+- For example, Boto has built-in support for IAM roles
+    - If connecting an AWS service without specifying any credentials, <b>Boto will check</b> to see wheather it is running on an EC2 instance and <b>wheather this instance has an IAM role</b>
+
 # References
 - [Using condition in aws policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html)
 - [Saving credentials to aws secrets manager](https://aws.amazon.com/blogs/compute/securing-credentials-using-aws-secrets-manager-with-aws-fargate/)
