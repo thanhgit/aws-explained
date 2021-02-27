@@ -1,7 +1,7 @@
 # Serverless Application Model (SAM)
 
 ## Note:
-- You you must have a bucket when you want to deploy a SAM application via a CLI
+- Must have a bucket when you want to deploy a SAM application via a CLI
 - You can't use the SAM CLI to delete a SAM application, Instead of, using: `aws cloudformation delete-stack --stack-name my-stack --region my-region --profile my-profile`
 - Build app and run local tests
     - Build command: `sam build --use-container`
