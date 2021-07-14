@@ -3,7 +3,7 @@ Code start is an integrated solution that regroups: `Github`, `CodeCommit`, `Cod
 
 ### Benefits
 - ### Helps quickly create `CI/CD-ready` projects for EC2, Lambda, Beanstalk
-- ### Issues dddintegration with `JIRA`, `Github issues`
+- ### Issues tracking integration with `JIRA`, `Github issues`
 - Integrate with `Cloud9` to obtain a web IDE
 - One dashboard to view all your components
 
