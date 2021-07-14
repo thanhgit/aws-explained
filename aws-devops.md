@@ -44,7 +44,17 @@
 
 #### In-depth deployement
 - #### In place deployment - `Half at a time`
+  - #### 
 ![image](https://user-images.githubusercontent.com/21302811/125702526-d68a93d1-a998-4119-a8b8-9ac034a02632.png)
 - #### Blue green deployemnt 
+  - #### A new auto-scaling group is created (settings are copied)
+  - #### Choose how long to keep the old instances
+  - #### `Must be using an ELB`
 ![image](https://user-images.githubusercontent.com/21302811/125702708-31adcd32-5876-4f85-9650-0cdcfc50b8f6.png)
+![image](https://user-images.githubusercontent.com/21302811/125704014-a8d067e6-4822-4e3e-b65b-373c9c1ad73f.png)
+![image](https://user-images.githubusercontent.com/21302811/125704048-a8608743-089a-4915-b53a-4f7d378ffc1e.png)
+![image](https://user-images.githubusercontent.com/21302811/125704101-f2ab9972-9402-4c9b-ab63-701450b302d6.png)
+
+### Note
+- ### If a roll back happens, Code Deploy redeploys the last known good revision as a new deployment
 
