@@ -14,4 +14,4 @@ Code pipeline same as continuous delivery
 ## CodePipeline artifacts
 - ### Each pipeline stage can create `artifacts`
 - ### Artifacts are passed stored in Amazon S3 and passed on to the next stage
-- ![image](https://user-images.githubusercontent.com/21302811/125705899-71d9d864-f391-4c8d-8af8-84bf579628de.png)
+![image](https://user-images.githubusercontent.com/21302811/125705976-43c91202-7e71-45ad-9a21-0156767cacbb.png)
