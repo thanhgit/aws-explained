@@ -28,5 +28,5 @@
   - ### Pre build: `commands to execute before build`
   - ### Build: `actual build commands`
   - ### Post build: `such as zip output`
-- Artifacts: `What to upload to S3`
-- Cache: `file to cache to S3 for future build speedup`
+- ### Artifacts: `What to upload to S3`
+- ### Cache: `file to cache to S3 for future build speedup`
