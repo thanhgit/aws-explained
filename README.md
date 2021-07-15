@@ -1,17 +1,17 @@
 # Amazon web services
 
 ## [VPC](./vpc.md)
-## [IAM](./iam.md)
+## [IAM](./sysadmin/iam.md)
 
-## [Overview Security AWS](./security_aws.md)
+## [Overview Security AWS](./sysadmin/security_aws.md)
 ## [EC2](./ec2.md) (Elastic compute cloud)
 - [Lifecycle of EC2](https://jayendrapatil.com/tag/disableapitermination/)
 
 ## [ECS](./ecs.md)
 
-## [SAM](./sam.md) and [Cloudformation](./cloudformation.md)
+## [SAM](./cloudformation/sam.md) and [Cloudformation](./cloudformation/cloudformation.md)
 
-## [DynamoDB](./dynamodb.md)
+## [DynamoDB](./dynamodb/dynamodb.md)
 
 ## [SNS](./sns.md)
 
@@ -60,13 +60,13 @@ https://github.com/PacktPublishing/Mastering-AWS-CloudFormation
 
 ## Terraform
 - [Terraform security](https://speakerdeck.com/garethr/shifting-terraform-security-left)
-- [Terraform common](./terraform_common.md)
-- [Terraform in detail](./terraform_in_detail.md)
-- [Terraform structure](./terraform_structure.md)
-- [Terraform pattern](./terraform_pattern.md)
-- [Terraform example](./terraform_example.md)
+- [Terraform common](./terraform/terraform_common.md)
+- [Terraform in detail](./terraform/terraform_in_detail.md)
+- [Terraform structure](./terraform/terraform_structure.md)
+- [Terraform pattern](./terraform/terraform_pattern.md)
+- [Terraform example](./terraform/terraform_example.md)
 
-## [Penetration testing](./security_penetration.md)
+## [Penetration testing](./sysadmin/security_penetration.md)
 ## Best practise
 - [Best Practices of Infrastructure-as-Code with Terraform](https://speakerdeck.com/joatmon08/best-practices-of-infrastructure-as-code-with-terraform)
 
@@ -74,5 +74,5 @@ https://github.com/PacktPublishing/Mastering-AWS-CloudFormation
 - [Create flow chart with markdown](https://github.com/mermaid-js/mermaid)
 - [Create aws architecture with cloudcraft](https://www.cloudcraft.co/)
 - [pre-commit for validating configuration](https://github.com/antonbabenko/pre-commit-terraform)
-- [NMAP](./nmap)
+- [NMAP](./sysadmin/nmap)
 - [Online tools](./tools.md)
