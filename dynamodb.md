@@ -2,7 +2,7 @@
 
 ## DynamoDB components
 - Tables: consists of a set of data
-- Item: a table consists of multiple table, alike key-value pair
+- Item: a table consists of multiple item, alike key-value pair
 - Attributes: an item in a table consists of multiple attributes
 
 ## Primary key has 2 types:
