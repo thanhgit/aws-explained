@@ -7,7 +7,7 @@
 
 ## Primary key has 2 types:
 - Partion key (hash key) => `simple primary key`: which determines in which partition the data is stored. Such as: employee_id
-- Partition key and sort key (range key) => `composite primary key`: determines the place of an item in a partion
+- Partition key and sort key (range key) => `composite primary key`: determines the place of an item in a partition
 - DynamoDB stores all items with the same partion key together. In a partition, items are order based on a sort key value
 ![](./media/primary_key_dynamodb.png)
 
