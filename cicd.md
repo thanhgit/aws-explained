@@ -1,7 +1,7 @@
 # AWS CI/CD
 
 ## In-build tools in AWS
-- ### CodeCommit
+- ### CodeCommit contains source code ~ `Github`
 - ### [CodeBuild](./code-build.md)
 - ### [CodeDeploy](./code-deploy.md)
 - ### [CodePipeline](./code-pipeline.md)
