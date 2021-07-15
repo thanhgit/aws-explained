@@ -1,9 +1,7 @@
-# AWS CI/CD with code commit, code artifact, code build, code deploy, code pipeline
+# Code deploy
+- There are several ways to handle deployments using open source such as ansible, terraform, chef, puppet, ...
+- We can use the managed service AWS CodeDeploy
 
-
-## Code deploy
-- ### There are several ways to handle deployments using open source such as ansible, terraform, chef, puppet, ...
-- ### We can use the managed service AWS CodeDeploy
 ### Use case:
 - #### Deploy your apps automatically to many EC2 instances
   - Each EC2 machine must be running the CodeDeploy agent
