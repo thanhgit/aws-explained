@@ -35,3 +35,5 @@ aws route53 list-hosted-zones | jq \
 ---
 9
 ```
+
+## Check json tool [link](https://jsonlint.com/)
