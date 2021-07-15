@@ -48,20 +48,20 @@
 ## Secondary index 
 - Main purpose is to provide an alternative key for query operations
 - The secondary index is linked with a table, which becomes the source of data for it
-- When you change anything on the base table, the change automatically reflects into indexs such as: add, modify, delete item in the table 
+- `When you change anything on the base table, the change automatically reflects into indexs` such as: add, modify, delete item in the table 
 
 ### Global secondary index (GSI)
-- Different partition key and sort key from base table
+- `Different partition key and sort key` from base table
 - When any request is executed against a GSI, its scope spans across all the partition in a table 
-- Simple attribute primary key or composite key
+- `Simple attribute primary key` or `composite key`
 - There is no restriction on the size of the index
-- Only support eventual consistency reads
+- `Only support eventual consistency reads`
 
 ### Local secondary index (LSI)
-- The same partition key as its base table => mapping between index and base table. It has a different sort key 
+- The `same partition key` as its base table => mapping between index and base table. It has a `different sort key` 
 - Only can composite key and query a single partition with a partition key value specified in the query
-- Each partion size < 10GB
-- Support both strongly and eventual consistency reads 
+- `Each partion size < 10GB`
+- `Support both strongly and eventual consistency reads`
 
 ## Integration
 ![image](https://user-images.githubusercontent.com/21302811/125799032-f168ed18-74ba-49f3-a89b-90c34b915d23.png)
