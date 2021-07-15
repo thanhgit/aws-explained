@@ -1,4 +1,9 @@
-# Dynamo database 
+# DynamoDB
+- ### Fully managed cloud database
+- ### Seamless on-demand scaling
+- ### Unlimited concurrent `Read/Write operations`
+- ### Single-digit milisecond latency
+- ### Sub-microsecond latency with `DAX`
 
 ## DynamoDB components
 - Tables: consists of a set of data
@@ -37,7 +42,7 @@
 ## Note:
 - GSIs are also segregated in partitions 
 - The data in an index is stored separately from the base data of a table
-- Index partitions and table partitions act in a similar manner in DynamoDB
+- `Index partitions` and `table partitions` act in a similar manner in DynamoDB
 - The best way to optimize partitioning is to use more distint values such as: COFFEE01, COFFEE02, ...
 
 ## Secondary index 
@@ -57,3 +62,22 @@
 - Only can composite key and query a single partition with a partition key value specified in the query
 - Each partion size < 10GB
 - Support both strongly and eventual consistency reads 
+
+## Integration
+![image](https://user-images.githubusercontent.com/21302811/125799032-f168ed18-74ba-49f3-a89b-90c34b915d23.png)
+
+## For example, connecting `DynamoDB` by aws-sdk
+```text
+const AWS = require("aws-sdk");
+AWS.config.update({ region: 'us-west-2' });
+
+const dynamodb = new AWS.DynamoDB();
+
+dynamodb.listTables((err, data)=>{
+    if(err) {
+        console.log(err);
+    } else {
+        console.log(data);
+    }
+});
+```
