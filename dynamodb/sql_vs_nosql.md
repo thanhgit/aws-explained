@@ -1,5 +1,7 @@
 # Comparing SQS and NoSQL
 
+![](./media/terminology_sql_nosql.png)
+
 ## Why NoSQL
 - ### RD not suited for unstructured data
 - ### RD not suited for big data applications
