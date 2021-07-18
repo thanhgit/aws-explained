@@ -1,0 +1,5 @@
+{
+    "user_id":{"S":"4"},
+    "timestamp":{"S":"1626540524"},
+    "content":{"S":"Hello world"}
+}

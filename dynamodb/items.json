@@ -1,0 +1,32 @@
+{
+    "dev-users": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "user_id": {"S": "1111"},
+                    "timestamp": {"S": "1525013088"},
+                    "content": {"S": "Content 1111"},
+                    "title": {"S": "Title 1111"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "user_id": {"S": "2222"},
+                    "timestamp": {"S": "1525013088"},
+                    "content": {"S": "Content 2222"},
+                    "title": {"S": "Title 2222"}
+                }
+            }
+        },
+        {
+            "DeleteRequest": {
+                "Key": {
+                    "user_id": {"S": "1234abcd"},
+                    "timestamp": {"S": "1525013000"}
+                }
+            }
+        }
+    ]
+}
