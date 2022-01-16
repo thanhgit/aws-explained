@@ -116,9 +116,9 @@ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/avatar-ima
     "Expiration" : "2016-06-11T09:55:33Z"
 }
 ```
-- Fortunately, the authors of the AWS SDKs have decided to make things easy for use using the client libraries
-- For example, Boto has built-in support for IAM roles
-    - If connecting an AWS service without specifying any credentials, <b>Boto will check</b> to see wheather it is running on an EC2 instance and <b>wheather this instance has an IAM role</b>
+- ### Fortunately, the authors of the AWS SDKs have decided to make things easy for use using the client libraries
+- ### For example, Boto has built-in support for IAM roles
+    - ### If connecting an AWS service without specifying any credentials, <b>Boto will check</b> to see wheather it is running on an EC2 instance and <b>wheather this instance has an IAM role</b>
 
 # References
 - [Using condition in aws policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html)

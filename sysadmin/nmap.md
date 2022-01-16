@@ -222,7 +222,7 @@ $ nmap -oA full-data scanme.nmap.org
 ```
 
 ## Nmap scan phase
-![scan phase](./media/nmap_scan_phase.png)
+![scan phase](../media/nmap_scan_phase.png)
 
 ## Scanning with privileges
 ```

@@ -7,7 +7,7 @@ resource "aws_iam_group" "administrators" {
 }
 resource "aws_iam_policy_attachment" "administrators-attach" {
     name = "administrators-attach"
-    groups = ["${aws_iam_group.administrators.name}"]
+    groups = [aws_iam_group.administrators.name]
     policy_arm = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 ```
@@ -15,7 +15,7 @@ or
 ```text
 resource "aws_iam_group_policy" "my_developer_policy" {
     name = "my_administrators_policy"
-    group = "${aws_iam_group.administrators.id}"
+    group = aws_iam_group.administrators.id
     policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -44,10 +44,10 @@ resource "aws_iam_user" "admin2" {
 resource "aws_iam_group_membership" "administrators-users" {
     name = "administrators-users"
     users = [
-        "${aws_iam_user.admin1.name}",
-        "${aws_iam_user.admin2.name}"
+        aws_iam_user.admin1.name,
+        aws_iam_user.admin2.name
     ]
-    group = ${aws_iam_group.administrators.name}
+    group = aws_iam_group.administrators.name
 }
 ```
 
@@ -75,15 +75,15 @@ EOF
 
 resource "aws_iam_instance_profile" "s3_my_bucket_role_instance_profile" {
     name = "s3_my_bucket_role_instance_profile"
-    role = ["${aws_iam_role.s3_my_bucket_role}"]
+    role = [aws_iam_role.s3_my_bucket_role]
 }
 
 resource "aws_instance" "example" {
     ami = "${lookup(var.AMIS, var.AWS_REGION)}"
     instance_type = "t2.micro"
-    subnet_id = "${aws_subnet.public_zone.id}"
-    vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
-    key_name = "${aws_key_pair.my_key.name}"    
+    subnet_id = aws_subnet.public_zone.id
+    vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+    key_name = aws_key_pair.my_key.name 
     # role
     iam_instance_profile = "${aws_iam_instance_profile.s3_my_bucket_role_instance_profile.name}"
 }

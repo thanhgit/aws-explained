@@ -1,19 +1,18 @@
 # Sysadmin in AWS
-- Flexibility is at the heart of the AWS product offering
-- At the lowest level, AWS is "simply" an HTTP-based API
-- When conflicting permissions are encountered, `Deny` takes precedence over `Allow`
+- ### When conflicting permissions are encountered, `Deny` takes precedence over `Allow`
 
 ## Denying rights with `NotResource` or `NotAction`
 ```json
 {
     "Statement": [
-        { "Action": [
-            "s3:*"
-        ],
-        "Effect": "Allow",
-        "NotResource": [
-            "arn:aws:s3:::db-backups"
-        ]
+        { 
+            "Action": [
+                "s3:*"
+            ],
+            "Effect": "Allow",
+            "NotResource": [
+                "arn:aws:s3:::db-backups"
+            ]
         }
     ]
 }
@@ -58,37 +57,36 @@
 ```
 
 ## The AWS security model rely on a shard responsibility model
-- User owns the OS's login credentials but AWS bootstraps initial access to that same OS
-![](./media/shared_responsibility_model_aws.png)
-- AWS is responsible for the physical security of all hardware assets and network infrastructure, software foundation underlying its services. In EC2's case, this includes virtual provisioning infrastructure as well as the issuing of any credentials required to access it
-- The customer's security area:
-    - AMI, OS, Applications
-    - Data in transit, data at rest, data stores
-    - Credentials
-    - Policies and configurations
+- ### `User owns the OS's login credentials`
+![](../media/shared_responsibility_model_aws.png)
+- ### `AWS is responsible for the physical security of all hardware assets and network infrastructure, software foundation underlying its services`
+- ### The customer's security area:
+    - ### AMI, OS, Applications
+    - ### Data in transit, at rest, data stores
+    - ### Credentials
+    - ### Policies and configurations
 
 ## Identify and access management
-- manage who and what can access AWS APIs
-- Having a well-planed policy based on IAM is an important of AWS security => `defense in depth strategy`
-- IAM makes a distinction between authentication (`who is this persion ?`) and authorization (`are they allowed to perform this action ?`)
-    - Authentication is handled by users and groups
-    - Authorization is handled by IAM policies
+- ### manage who and what can access AWS APIs
+- ### Having a well-planed policy based on IAM is an important of AWS security => `defense in depth strategy`
+- ### IAM makes a distinction between authentication (`who is this person ?`) and authorization (`are they allowed to perform this action ?`)
+    - ### Authentication is handled by users and groups
+    - ### Authorization is handled by IAM policies
 
-### IAM policy
-- is a JSON-formatted document describing which actions (who (`user or group`), what (`resource such as EC2, ECS`)) can perform
-#### Better solution
-- create a set of access credentials that are authorized to perform only the specific actions
-- Such as AMI-cleaner, database-backups
+### `IAM policy`: is a JSON-formatted document describing which actions (who (`user or group`), what (`resource such as EC2, ECS`)) can perform
+- ### create a set of access credentials that are authorized to perform only the specific actions
+- ### Such as AMI-cleaner, database-backups
 
-## Permission
-- is a combination of 2 items: an action and one or more resources
-- Actions are namespaced strings that take the form `service_name:Permission`
-- Such as `ec2:DeleteSnapshot`
+### `Permission`
+- ### is a combination of 2 items: an action and one or more resources
+- ### Actions take the form `service_name:Permission`
+- ### FX: `ec2:DeleteSnapshot`
 
 ### Create user
 ```bash
 aws iam create-user --user-name ami-cleaner
----
+```
+```json
 {
     "User": {
         "UserName": "ami-cleaner",
@@ -103,7 +101,8 @@ aws iam create-user --user-name ami-cleaner
 ### Create access key
 ```bash
 aws iam create-access-key --user-name ami-cleaner
----
+```
+```json
 {
     "AccessKey": {
         "UserName": "ami-cleaner",
@@ -167,7 +166,7 @@ aws iam put-group-policy --group-name dev_admins --policy-name dev_admins --poli
 aws iam get-credential-report | jq -r '.Content' | base64 -d > report.csv
 ```
 ### Get access keys
-- AWS limit users have 2 access keys
+- ### AWS limit users have 2 access keys
 ```bash
 aws iam list-access-keys --user-name vana
 ```
