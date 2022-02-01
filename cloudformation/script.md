@@ -9,7 +9,7 @@ aws ec2 run-instances --region us-east-1 \
 --instance-type t2.micro --image-id ami-43a15f3e \
 --output text --query 'Instances[*].InstanceId'
 ```
-- Useful in shell script
+- ### Useful in shell script
 ```bash
 #! /bin/bash
 KILL_LIST=$(aws ec2 describe-instances --output text \
@@ -30,21 +30,23 @@ Globals:
             GUESTS_TABLE: !Ref GuestsTable
             REPORTS_BUCKET: !Ref ReportsBucket
 ```
-Using command
+- ### Using command
 ```bash
-$ sam build --use-container
-
-$ sam package \
+sam build --use-container
+```
+```bash
+sam package \
     --s3-bucket sam-bucket
     --output-template-file template.yaml
-
-$ sam deploy \
+```
+```bash
+sam deploy \
     --template-file template.yaml \
     --stack-name my-stack \
     --capabilities CAPABILITY_IAM
 ```
 
-## mybucket.yaml
+## `mybucket.yaml`
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
 Description: This is a my bucket
@@ -54,14 +56,14 @@ Resources:
         Properties:
             AccessControl: PublicRead
 ```
-- Create s3
+- ### Create s3
 ```
-$ aws cloudformation create-stack \
+aws cloudformation create-stack \
 --stack-name mybucket \
 --template-body file://MyBucket.yaml
 ```
 
-## myiamrole.yaml
+## `myiamrole.yaml`
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "This is a dummy role"
